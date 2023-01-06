@@ -139,6 +139,5 @@ class CurrencyConverter:
         self.historical_rate = self.api.get_historical_rate(self.from_currency, self.to_currency, self.date)
         print(self.historical_rate)
         self.final_rate = self.historical_rate.get('rates').get(self.to_currency)
-        # print(f'The conversion rate on {self.historical_rate.get("date")} from {self.from_currency} to {self.to_currency} was {self.final_rate}. The inverse rate was {self.reverse_rate()}') 
-        print(f'The conversion rate on {self.date} from {self.from_currency} to {self.to_currency} was {self.final_rate}. The inverse rate was {self.reverse_rate()}') 
+        print(f'The conversion rate on {self.historical_rate.get("date")} from {self.from_currency} to {self.to_currency} was {self.final_rate}. The inverse rate was {self.reverse_rate()}') 
         return self.final_rate
