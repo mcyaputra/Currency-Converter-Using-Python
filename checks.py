@@ -3,8 +3,8 @@ import sys
 
 def check_arguments(args):
     """
-    Function that will check if there are enough input arguments provided (ie exactly 3) and will return the input arguments if it is the case.
-    Otherwise the program will exit and display the relevant message provided in the assignment brief
+    Function to check if there are enough argument provided (in this case, exactly 3) and return the argument if it checks out.
+    Otherwise program exits and displays error message.
 
     Parameters
     ----------
@@ -14,16 +14,16 @@ def check_arguments(args):
     Pseudo-code
     ----------
     IF number of arguments < 3 THEN
-        DISPLAY error message
+        display error message
         AND exit the program
     OTHERWISE
         IF the arguments provided equal three arguments THEN
-        RETURN the arguments 
+        RETURN the arguments
     
     Returns
     -------
     str
-        Return the argument after checking
+        Return argument after checking
     """
     if len(args) != 3 :
         print("[ERROR] You need to provide 3 arguments in the following order: <date> <currency1> <currency2>")
@@ -33,19 +33,19 @@ def check_arguments(args):
 
 def check_date(date):
     """
-    Function that will check if the provided date is valid and will return the value True if that is the case. 
-    Otherwise the program will exit and display the relevant message provided in the assignment brief
+    Function to check if provided date is valid and return "True" if valid. 
+    Otherwise the program exits and displays invalid message.
 
     Parameters
     ----------
     Date
-        check if the parameter supplies is a valid date
+        check if value is a valid date
 
     Pseudo-code
     ----------
-    Define the expected date format and assign it into a variable
-    IF the date or value supplied is the indeed a date and the right format
-        return result as true
+    Define the expected date format, assign to a variable
+    If value is a date and right format
+        return TRUE
     OTHERWISE
         DISPLAY error message
         AND exit the program
@@ -54,7 +54,7 @@ def check_date(date):
     -------
     Bool
         True if format is valid
-        Otherwise Display error message
+        Otherwise display error message
     """
     date_format = '%Y-%m-%d'
     try :
@@ -63,5 +63,3 @@ def check_date(date):
     except: 
         print("Provided date is invalid")
         sys.exit()
-
-        

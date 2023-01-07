@@ -3,16 +3,16 @@ from api import call_get
 
 class Frankfurter:
     """
-    Class that manages API calls to Frankfurter. It will be used to store the URLS to the relevant endpoints. It will also automatically call the Currencies endpoint and store the return list of available currency codes.
+    Class that manages API calls to Frankfurter. It will be used to store the URLs to relevant endpoints, extract and store available currency codes.
 
     Attributes
     ----------
     base_url : str
         Base url to Frankfurter API
     currencies_url : str
-        Frankfurter endpoint for extracting currencies list
+        Frankfurter endpoint to extract currencies list
     historical_url : str
-        Frankfurter endpoint for extracting historical currencies conversion rates
+        Frankfurter endpoint to extract historical currency conversion rates
     currencies: list
         List of available currency codes
     """
@@ -24,7 +24,7 @@ class Frankfurter:
     
     def get_currencies_list(self):
         """
-        Method that will get the list of available currencies and returns it as a Python list.
+        Method to extract list of available currencies and returns it as a Python list.
 
         Parameters
         ----------
@@ -32,8 +32,8 @@ class Frankfurter:
 
         Pseudo-code
         ----------
-        Call API to retrieve the list of available currencies, return json format and extract the keys only
-        Return the result and format it into list
+        Call API to retrieve the list of available currencies, return it in a json format and extract the keys only
+        Return the result and format it into a list
 
         Returns
         -------
@@ -45,21 +45,22 @@ class Frankfurter:
 
     def check_currency(self, currency):
         """
-        Method that will check if a provided currency code is valid and return True if that is the case.
-        Otherwise it will return False.
+        Method that will check if currency code provided is valid and return True
+        Otherwise it will return False
 
         Parameters
         ----------
-        Argument to be checked
+        Currency
+            Value to be checked
 
         Pseudo-code
         ----------
         Retrieve the list of currencies using pre defined method and assign it to a variable
-        Check if the argument/currency supplied is in the currencies list
-        IF argument/currency is in the currencies list
+        Check if the argument/currency supplied is in the currency list
+        IF argument/currency is in the currency list
             Return True
-        IF argument/currency is not in the currencies list
-            Display error message saying the argument/currency is not valid
+        IF argument/currency is not in the currency list
+            Display an error message saying currency is not valid
 
         Returns
         -------
@@ -79,14 +80,14 @@ class Frankfurter:
 
     def get_historical_rate(self, from_currency, to_currency, from_date, amount=1):
         """
-        Method that will call the historical API endpoint in order to get the conversion rate for a given dates and currencies. It will return an requests.models.Response object.
+        Method to extract historical conversion rate based on specific date and currency. It will return an requests.models.Response object.
 
         Parameters
         ----------
         from_currency
-            Currency1/starting currency
+            Currency 1 / original currency
         to_currency
-            Currency2/currency to be checked against
+            Currency 2 / target currency
         from_date
             Exchange rate will be based on this date/value
         amount

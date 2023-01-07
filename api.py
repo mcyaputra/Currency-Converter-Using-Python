@@ -4,7 +4,7 @@ import sys
 def call_get(url: str) -> requests.models.Response:
     """
     Function that will call the API endpoint (input parameter) and return its response as a requests.models.Response object
-    In case of an error, the program will exit and display the relevant message provided in the assignment brief
+    If error, the program will exit and display an error message
 
     Parameters
     ----------
@@ -13,12 +13,12 @@ def call_get(url: str) -> requests.models.Response:
 
     Pseudo-code
     ----------
-    Retrive information from the targeted URL and store it into a variable
-    IF retrival status is as expected by checking the status
+    Retrive information from the targeted URL and store it to a variable
+    IF retrival status is as expected
         return the result
     OTHERWISE
-        DISPLAY error meessage
-        AND exit the program
+        DISPLAY error message
+        THEN exit the program
 
     Returns
     -------

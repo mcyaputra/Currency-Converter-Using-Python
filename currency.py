@@ -4,22 +4,22 @@ from frankfurter import Frankfurter
 class CurrencyConverter:
 
     """
-    Class that represents a Currency conversion object. It will be used to store the input arguments (currency codes, date) and also other information required (amount, rate, inverse rate, instantiation of Frankfurter class).
+    Class to convert currency. It will be used to store arguments from user (currency codes and date) and other information (amount, rate, inverse rate, instantiation of Frankfurter class).
 
     Attributes
     ----------
     from_currency : str
-        Code for the origin currency
+        Code for original currency
     to_currency : str
-        Code for the destination currency
+        Code for target currency
     amount : float
-        The amount (in origin currency) to be converted
+        Amount (in original currency) to be converted
     rate : float
-        The conversion rate to be applied on the origin amount (origin -> destination)
+        Conversion rate (original -> target)
     inverse_rate : float
-        The inverse of the previous rate  (destination -> origin)
+        The inverse rate of the original conversion rate  (original -> target)
     date : str
-        Date when the conversion rate was recorded
+        Determine conversion rate based on specific time
     api : Frankfurter
         Instance of Frankfurter class
     """
@@ -34,8 +34,8 @@ class CurrencyConverter:
         
     def check_currencies(self):
         """
-        Method that will check if currency codes stored in the class attributes are valid.
-        Otherwise the program will exit and display the relevant message provided in the assignment brief
+        Method to check if currency codes stored in class attributes are valid.
+        Otherwise the program will exit and display invalid message
 
         Parameters
         ----------
@@ -43,11 +43,11 @@ class CurrencyConverter:
 
         Pseudo-code
         ----------
-        IF both currency1 and currency2 are not valid THEN
+        IF both currency 1 and currency 2 are not valid THEN
             DISPLAY error message
-        IF currency1 is not valid THEN
+        IF currency 1 is not valid THEN
             DISPLAY error message
-        IF currency2 is not valid THEN
+        IF currency 2 is not valid THEN
             DISPLAY error message
         OTHERWISE
             RETURN True
@@ -74,7 +74,7 @@ class CurrencyConverter:
 
     def reverse_rate(self):
         """
-        Method that will calculate the inverse rate from the value stored in the class attribute, round it to 4 decimal places and save it back in the class attribute inverse_rate.
+        Method to calculate the inverse rate of value stored in the class attribute, round it to 4 decimal places and save it to class attribute
 
         Parameters
         ----------
@@ -82,11 +82,12 @@ class CurrencyConverter:
 
         Pseudo-code
         ----------
-        Set a variable to calculate the inverse rate
-        Set a variable to round decimals to the nearest number
+        Assign a variable to calculate the inverse rate
+        Assign a variable to round decimals in the value
         Return the final value
 
         Returns
+        -------
         Float
             Return inverse rate
         """
@@ -96,7 +97,7 @@ class CurrencyConverter:
 
     def round_rate(self, rate):
         """
-        Method that will round an input argument to 4 decimals places.
+        Method to round value to 4 decimals
 
         Parameters
         ----------
@@ -105,7 +106,7 @@ class CurrencyConverter:
 
         Pseudo-code
         ----------
-        Round number to 4 decimals and return the result
+        Round value to 4 decimals and return the result
 
         Returns
         -------
@@ -116,8 +117,8 @@ class CurrencyConverter:
 
     def get_historical_rate(self):
         """
-        Method that will call the Frankfurter API and get the historical conversion rate for the currencies (rounded to 4 decimals) and date stored in the class attributes.
-        Then it will calculate the inverse rate and will exit by displaying the relevant message provided in the assignment brief
+        Method to call Frankfurter API and extract historical conversion rate for provided currencies (rounded to 4 decimals) and date stored in the class attributes.
+        Then it will calculate the inverse rate and will exit by displaying message containing conversion result
 
         Parameters
         ----------
@@ -125,9 +126,9 @@ class CurrencyConverter:
 
         Pseudo-code
         ----------
-        Extract historical rate from Frankfurter PI based on the arguments supplied,
-        Get the specific target currency and exchange rate, return the exchange rate and the inverse rate based on the date argument, assign the result to a variable
-        Display the message with the relevant information including currency1, currency2, date, exchange rate and inverse rate
+        Extract historical rate from Frankfurter API based on arguments inputted
+        Extract exchange and inverse rate based on currencies and date provided then assign the result to a variable
+        Display message containing currency 1, currency 2, date, resulting exchange rate and inverse rate
 
         Returns
         -------
@@ -137,7 +138,6 @@ class CurrencyConverter:
             Exchange rates are included in the message displayed
         """
         self.historical_rate = self.api.get_historical_rate(self.from_currency, self.to_currency, self.date)
-        print(self.historical_rate)
         self.final_rate = self.historical_rate.get('rates').get(self.to_currency)
         print(f'The conversion rate on {self.historical_rate.get("date")} from {self.from_currency} to {self.to_currency} was {self.final_rate}. The inverse rate was {self.reverse_rate()}') 
         return self.final_rate
