@@ -3,7 +3,7 @@ from api import call_get
 
 class Frankfurter:
     """
-    Class that manages API calls to Frankfurter. It will be used to store the URLs to relevant endpoints, extract and store available currency codes.
+    Class that manages Frankfurter API calls. It will be used to store URLs to relevant endpoints, extract and store available currency codes.
 
     Attributes
     ----------
