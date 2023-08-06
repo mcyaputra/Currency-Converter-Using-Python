@@ -1,8 +1,16 @@
-## [🖍] Description 
+## 💲 Currency Converter
 
-Python currency converter - this program pulls exchange rates from Frankfurter API, which tracks rates published by European Central Bank (ECB). It is capable of showing exchange rate between two currencies at a specified date as well as their inverse rate.
+This python scripts pull exchange rates from Frankfurter API, which tracks rates published by European Central Bank (ECB). It is capable of showing exchange rate between two currencies at a specified date as well as their inverse rate.
+
+Simply provide 3 arguments:
+1. Date
+2. From currency
+3. Target currency
+
+The script will tell you what is the exchange rate between the two currencies specified for the date you specified
 
 Some additional features to be added:
+
 -Real time exchange rate, counting down to the seconds
 
 -Showing exchange rate based on a value entered by user
@@ -11,7 +19,7 @@ Some additional features to be added:
 
 -Provide recommendation if user should exchange or hold on to their currency
 
-## How to Setup
+## 🤖 How to Setup
 
 1. Download all of the following files: 
 -[main.py](/main.py)
@@ -22,7 +30,7 @@ Some additional features to be added:
 
 2. Save all files in one working folder of your choice
 
-## How to Run the Program
+## 💻 How to Run the Program
 1. Open terminal and navigate to the working folder where all the files were stored
 2. Run main.py file in the terminal by typing:  
 python (or python3 on macbook) <file name> <YYYY-MM-DD> <from_currency> <to_currency>  
@@ -37,13 +45,13 @@ python (or python3 on macbook) <file name> <YYYY-MM-DD> <from_currency> <to_curr
 
 4. Run every test files individually in the terminal and check the result
   
-## Package/library used:  
+## ⚙️ Package/library used:  
 -sys  
 -datetime  
 -requests (version 2.28.1)  
 -unittest
 
-## Project Structure
+## 💡 Project Structure
 List of files:  
 1. main py: this is the main file where the program will be based and run  
 2. checks.py: file containing classes to check whether the arguments supplied are valid  
@@ -56,7 +64,7 @@ List of files:
 9. test_api.py: file containing scripts to run tests in api.py making sure the codes are running and returning the expected results  
 10. README.md: markdown file containing project description, functions, scripts, classes and detailed instructions on how to run the program
 
-## Feedback/Ideas? Lets connect!
+## 👨 Feedback/Ideas? Lets connect!
 
 I would love to hear feedbacks or ideas from you! Or just simply connect and chat, feel free to contact me on:
 
