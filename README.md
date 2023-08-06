@@ -21,11 +21,16 @@ Some additional features to be added:
 
 ## 🤖 How to Setup
 
-1. Download all of the following files: 
+1. Download all of the following files:
+
 -[main.py](/main.py)
+
 -[checks.py](/checks.py)
+
 -[currency.py](/currency.py)
+
 -[frankfurter.py](/frankfurter.py)
+
 -[api.py](/api.py)
 
 2. Save all files in one working folder of your choice
@@ -38,9 +43,13 @@ python (or python3 on macbook) <file name> <YYYY-MM-DD> <from_currency> <to_curr
 -Result should display the exchange rate and inverse rate based on currency codes and date 
 
 3. To run unittest, download the following files:  
+
 -[test_api.py](/test_api.py)
+
 -[test_checks.py](/test_checks.py)
+
 -[test_currency.py](/test_currency.py)
+
 -[test_frankfurter.py](/test_frankfurter.py)
 
 4. Run every test files individually in the terminal and check the result
