@@ -1,4 +1,4 @@
-## Description
+## [🖍] Description 
 
 Python currency converter - this program pulls exchange rates from Frankfurter API, which tracks rates published by European Central Bank (ECB). It is capable of showing exchange rate between two currencies at a specified date as well as their inverse rate.
 
